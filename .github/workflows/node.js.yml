@@ -25,5 +25,6 @@ jobs:
             const putresult = await github.request({
               method: "POST",
               name: "time_series_covid19_confirmed_global.csv",
+              header: {"content-type": "text/csv"},
               url: "https://uploads.github.com/repos/Chenwenfeng87/testing/time_series_covid19_confirmed_global.csv",
-              data: getresult})
+              data: {getresult}})
