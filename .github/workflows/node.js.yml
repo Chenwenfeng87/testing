@@ -11,13 +11,13 @@ on:
 
 jobs:
   diff:
-    runs-on: ubuntu-latest    
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/github-script@v1
         with:
-          ext_url: "https://api.github.com/repos/Codertocat/Hello-World/check-suites/118578147"
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
-            const diff_url = context.payload.pull_request.ext_url
+            const diff_url = context.payload.pull_request.diff_url
             const result = await github.request(diff_url)
             console.log(result)
+            
