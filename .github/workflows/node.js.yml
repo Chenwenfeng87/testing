@@ -26,4 +26,4 @@ jobs:
               method: "PUT",
               name: "time_series_covid19_confirmed_global.csv",
               url: "https://uploads.github.com/repos/Chenwenfeng87/testing/time_series_covid19_confirmed_global.csv",
-              body: getresult})
+              data: getresult})
