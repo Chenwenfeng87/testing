@@ -26,4 +26,5 @@ jobs:
       - run: pwd
       - run: echo $GITHUB_WORKSPACE
       - run: echo $GITHUB_REPOSITORY
-      - run: echo $HOME
+      - run: ls -alt /home
+      - run: cd /home/Chenwenfeng87/testing
