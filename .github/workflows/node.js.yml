@@ -25,4 +25,5 @@ jobs:
             cfile.log(getresult.data)
       - run: pwd
       - run: echo $GITHUB_WORKSPACE
-      - run: echo GITHUB_WORKSPACE
+      - run: echo $GITHUB_REPOSITORY
+      - run: echo $HOME
