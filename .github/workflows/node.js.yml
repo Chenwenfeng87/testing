@@ -26,4 +26,3 @@ jobs:
       - run: pwd
       - run: echo $GITHUB_WORKSPACE
       - run: echo GITHUB_WORKSPACE
-      - run: echo ${{GITHUB_WORKSPACE}}
