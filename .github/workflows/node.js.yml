@@ -13,10 +13,11 @@ jobs:
   diff:
     runs-on: ubuntu-latest
     steps:
-    - shell: bash
-      run: echo "testing" > math-homework.txt
-    - name: Upload math result for job 1
-      uses: actions/upload-artifact@v1
-      with:
-        name: testing
-        path: math-homework.txt
+      - name: Download math result for job 1
+        uses: actions/download-artifact@v1
+        with:
+          name: homework
+      - shell: bash
+        run: |
+          value=`cat homework/math-homework.txt`
+          expr $value \* 9 > homework/math-homework.txt
