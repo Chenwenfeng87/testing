@@ -13,14 +13,10 @@ jobs:
   diff:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - run: echo hello > world.txt
-    - uses: actions/upload-artifact@v2
-      with:
-        name: my-artifact
-        path: world.txt
-    - uses: actions/download-artifact@v2
-      with:
-        name: my-artifact
-    - name: Display structure of downloaded files
-      run: ls -R
+      - uses: actions/checkout@v2
+      - uses: actions/github-script@v1
+        with:
+          script: |
+            const path = require('path')
+            const scriptPath = path.resolve('./path/to/script.js')
+            console.log(require(scriptPath)({context}))
