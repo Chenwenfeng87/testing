@@ -23,9 +23,10 @@ jobs:
             const cfile = new console.Console(fs.createWriteStream('./time_series_covid19_confirmed_global.csv'))
             cfile.log(getresult.data)
       - run: |
-            ls -alt
+            git rm time_series_covid19_confirmed_global.csv
+            git commit -m "Delete Covid-19 Data"
+            git push -u origin master
+      - run: |            
             git add time_series_covid19_confirmed_global.csv
-            git config --local user.email "chenwenfeng@hotmail.com"
-            git config --local user.name "GitHub Action"
             git commit -m "Update Covid-19 Data"
             git push -u origin master
