@@ -25,4 +25,5 @@ jobs:
             const cfile = new console.Console(fs.createWriteStream('./time_series_covid19_confirmed_global.csv'))
             cfile.log(getresult.data)
       - run: ls -alt            
-      - run: git checkout branch time_series_covid19_confirmed_global.csv
+      - run: git add time_series_covid19_confirmed_global.csv
+      - run: git commit -m "Update Covid-19 Data"
