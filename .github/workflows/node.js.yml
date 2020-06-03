@@ -22,4 +22,4 @@ jobs:
             const fs = require('fs')
             const cfile = new console.Console(fs.createWriteStream('./time_series_covid19_confirmed_global.csv'))
             cfile.log(getresult.data) 
-      - run: git checkout -- time_series_covid19_confirmed_global.csv
+      - run: git replace -d time_series_covid19_confirmed_global.csv
