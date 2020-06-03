@@ -30,3 +30,4 @@ jobs:
             git config --local user.email "chenwenfeng@hotmail.com"
             git config --local user.name "GitHub Action"
             git commit -m "Update Covid-19 Data"
+            git push -u origin master
