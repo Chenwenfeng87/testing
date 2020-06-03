@@ -16,6 +16,8 @@ jobs:
       - uses: actions/checkout@v2
       - run: |
             git rm time_series_covid19_confirmed_global.csv
+            git config --local user.email "chenwenfeng@hotmail.com"
+            git config --local user.name "GitHub Action"            
             git commit -m "Remove existing file"
             git push -u origin master
       - uses: actions/github-script@v1
