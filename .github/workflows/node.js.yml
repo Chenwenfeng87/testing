@@ -4,8 +4,10 @@
 name: Node.js CI
 
 on:
-  schedule: 
-  - cron:  '*/3 * * * *'
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 jobs:
   diff:
@@ -22,3 +24,4 @@ jobs:
             const fs = require('fs')
             const cfile = new console.Console(fs.createWriteStream('./time_series_covid19_confirmed_global.csv'))
             cfile.log(getresult.data) 
+      - run: git checkout commit time_series_covid19_confirmed_global.csv
